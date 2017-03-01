@@ -158,6 +158,19 @@ public class Lawrence {
 		}
 		return line;
 	}
+	private String[] removeJunk(String s) {
+		String[] line = s.split(" ");
+		/**
+		 * Takes a string and converts it to an array, and then
+		 * takes this array of words (sentence) and returns an array of words
+		 * minus non-alphabet characters.
+		 */
+		for (int i = 0; i < line.length; i++) {
+			line[i] = line[i].replaceAll("[^a-zA-Z]", "");
+			line[i] = line[i].toLowerCase();
+		}
+		return line;
+	}
 
 	public int countSyllablesLight(String s) {
 		/** 
